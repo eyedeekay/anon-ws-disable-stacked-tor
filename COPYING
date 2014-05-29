@@ -1,7 +1,7 @@
-Format: http://dep.debian.net/deps/dep5
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
-Copyright: 2014 Patrick Schleizer
+Copyright: 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ License: GPL-3+
  License version 3 can be found in the file
  `/usr/share/common-licenses/GPL-3'.
 
-Files: /etc/default/tor
+Files: /etc/default/tor.anondist
 Comment: Downloaded from: http://packages.debian.org/jessie/tor
                           http://metadata.ftp-master.debian.org/changelogs//main/t/tor/tor_0.2.3.25-1_copyright
                           http://www.webcitation.org/6Pn35Nro1
