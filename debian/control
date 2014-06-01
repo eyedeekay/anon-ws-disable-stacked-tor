@@ -16,7 +16,7 @@ Package: anon-ws-disable-stacked-tor
 Provides: tor, ${diverted-files}
 Conflicts: tor, ${diverted-files}
 Architecture: all
-Depends: ${misc:Depends}
+Depends: rinetd, ${misc:Depends}
 Description: Prevents Tor over Tor in Anonymity Distribution Workstations
  Supposed to be installed on Workstations, which prevents installing the real
  Tor package from upstream (ex: Debian, The Tor Project) APT repositories. Its
