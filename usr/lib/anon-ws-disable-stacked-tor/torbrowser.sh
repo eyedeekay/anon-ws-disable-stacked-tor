@@ -4,16 +4,6 @@
 ## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
-## The TB_STANDALONE variable get used by the patched Tor Browser
-## startup script /usr/share/whonix/start-tor-browser, which gets
-## copied to /home/user/tor-browser_en-US/start-tor-browser by the
-## Whonix torbrowser download and install script /usr/bin/torbrowser.
-## It prevents Tor/Vidalia from starting and only starts Tor Browser.
-## As soon as upstream moved from Vidalia to tor-launcher, this variable
-## and the patch Tor Browser start up script may not longer be necessary,
-## since TOR_SKIP_LAUNCH will handle it then.
-export TB_STANDALONE=1
-
 ## Deactivate tor-launcher,
 ## a Vidalia replacement as browser extension,
 ## to prevent running Tor over Tor.
