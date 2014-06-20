@@ -25,7 +25,9 @@ case "$1" in
       ps -p "$(cat "/var/run/rinetd.pid")" || { ps_p_exit_code="$?" ; true; };
       if [ "$ps_p_exit_code" = "0" ]; then
          if [ -x "/etc/init.d/rinetd" ]; then
-            service rinetd restart
+            ## || true to avoid an error in case the init script has been
+            ## chmodded -x in meanwhile or in case the original config is erroneous.
+            service rinetd restart || true
          fi
       fi
 
