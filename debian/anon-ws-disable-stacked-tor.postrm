@@ -22,7 +22,7 @@ case "$1" in
 
       ## rinetd's init script does not support "status".
       ps_p_exit_code="0"
-      ps -p "$(cat "/var/run/rinetd.pid")" || { ps_p_exit_code="$?" ; true; };
+      ps -p "$(cat "/var/run/rinetd.pid")" >/dev/null 2>&1 || { ps_p_exit_code="$?" ; true; };
       if [ "$ps_p_exit_code" = "0" ]; then
          if [ -x "/etc/init.d/rinetd" ]; then
             ## || true to avoid an error in case the init script has been
