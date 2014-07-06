@@ -5,6 +5,6 @@
 ## See the file COPYING for copying conditions.
 
 ## Not using echo, because it conflicts with AppArmor.
-#echo "INFO $0: Dummy Tor."
+#echo "INFO $BASH_SOURCE: Dummy Tor."
 
 exit 0
