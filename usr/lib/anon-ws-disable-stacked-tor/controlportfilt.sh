@@ -20,8 +20,16 @@ if [ -d /etc/controlportfilt.d ]; then
             true "skip $i"
             continue
          fi
-         bash -n "$i"
-         source "$i"
+         bash_n_exit_code="0"
+         bash_n_output="$(bash -n "$i" 2>&1)" || { bash_n_exit_code="$?" ; true; };
+         if [ ! "$bash_n_exit_code" = "0" ]; then
+            echo "Invalid config file: $i
+bash_n_exit_code: $bash_n_exit_code
+bash_n_output:
+$bash_n_output" >&2
+         else
+            source "$i"
+         fi
       fi
    done
 fi
