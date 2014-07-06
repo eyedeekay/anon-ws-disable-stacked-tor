@@ -20,6 +20,7 @@ if [ -d /etc/controlportfilt.d ]; then
             true "skip $i"
             continue
          fi
+         bash -n "$i"
          source "$i"
       fi
    done
