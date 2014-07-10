@@ -14,7 +14,7 @@ Standards-Version: 3.9.4
 
 Package: anon-ws-disable-stacked-tor
 Provides: tor, ${diverted-files}
-Conflicts: tor, ${diverted-files}
+Conflicts: ${diverted-files}
 Architecture: all
 Depends: rinetd, ${misc:Depends}
 Description: Prevents Tor over Tor in Anonymity Distribution Workstations
