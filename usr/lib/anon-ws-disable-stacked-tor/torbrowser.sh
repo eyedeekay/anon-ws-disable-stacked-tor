@@ -27,3 +27,7 @@ export TOR_SKIP_LAUNCH=1
 #export TOR_SOCKS_PORT="9100"
 
 #export TOR_TRANSPROXY=1
+
+## environment variable to skip TorButton control port verification
+## https://trac.torproject.org/projects/tor/ticket/13079
+export TOR_SKIP_CONTROLPORTTEST=1
