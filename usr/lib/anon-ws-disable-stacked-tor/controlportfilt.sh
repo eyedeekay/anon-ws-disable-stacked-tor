@@ -43,6 +43,5 @@ if [ ! "$CONTROL_PORT_FILTER_PROXY" = "0" ]; then
    export TOR_CONTROL_PORT="9151"
 
    ## this is to satisfy Tor Button just filled up with anything
-   export TOR_CONTROL_PASSWD="password"
-
+   export TOR_CONTROL_PASSWD='"password"'
 fi
