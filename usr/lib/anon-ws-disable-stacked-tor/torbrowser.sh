@@ -31,3 +31,10 @@ export TOR_SKIP_LAUNCH=1
 ## environment variable to skip TorButton control port verification
 ## https://trac.torproject.org/projects/tor/ticket/13079
 export TOR_SKIP_CONTROLPORTTEST=1
+
+## Environment variable to disable the "TorButton" ->
+## "Open Network Settings..." menu item. It is not useful and confusing to have
+## on a workstation, because Tor must be configured on the gateway, which is
+## for security reasons forbidden from the gateway.
+## https://trac.torproject.org/projects/tor/ticket/14100
+export TOR_NO_DISPLAY_NETWORK_SETTINGS=1
