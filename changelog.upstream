@@ -1,0 +1,278 @@
+commit a79b1ec6e5f2112b0a06f24c045470a2b749ae06
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Feb 4 00:40:28 2015 +0000
+
+    updated makefile generic to version 1.3
+
+commit 662b3403c33d362cb4e4584195c3be086c7693d8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Feb 3 23:58:34 2015 +0000
+
+    Added creation of upstream changelog to debian/rules
+
+commit 275f072b03510324c6e8cdf3556b1d1a83cc90ca
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 24 18:18:24 2015 +0000
+
+    Work on Tor Messenger Support:
+    - Forward workstation 127.0.0.1 9152 to gateway 10.152.152.10 9152. (SocksPort)
+    - Forward workstation 127.0.0.1 9153 to gateway 10.152.152.10 9052 where Control Port Filter Proxy. (ControlPort)
+
+commit d010ed40de49becf55ac223b74fb2b269356c907
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 24 18:09:22 2015 +0000
+
+    comments
+
+commit baa5b888f2ced94e0576fbf160b350b730b0b886
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jan 13 00:23:04 2015 +0000
+
+    Added:
+    export TOR_NO_DISPLAY_NETWORK_SETTINGS=1
+    Environment variable to disable the "TorButton" ->
+    "Open Network Settings..." menu item. It is not useful and confusing to have
+    on a workstation, because Tor must be configured on the gateway, which is
+    for security reasons forbidden from the gateway.
+    https://trac.torproject.org/projects/tor/ticket/14100
+
+commit d5f597b6279b78e51b984612fe66908d25d3b66c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 7 19:33:32 2015 +0000
+
+    bumped compat from 8 to 9
+
+commit cbec50435ff09993a5b0d26b16b78a67d310b553
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Dec 5 19:01:07 2014 +0000
+
+    updated generic makefile
+
+commit b7b83767b48d6f78104ed0a06c740d69985a8c07
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Oct 28 22:35:15 2014 +0000
+
+    makefile: refactoring, avoid using IFS
+
+commit 3c1ad005f55fb130d60747df3a6de42b895682f1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Oct 25 01:58:49 2014 +0000
+
+    makefile:
+    - make debdist; make undebdist
+    - cleanup
+    - refactoring
+
+commit 29848199153c07ff7a8ea8fc0d563b479481768a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 23 22:43:01 2014 +0000
+
+    makefile:
+    - new target "make undist", which deletes the upstream tarball
+    - $DISTDIR variable for make (un)dist, which defaults to ".." and can be used to create upstream tarballs in arbitrary locations
+    - refactoring, all function names and global variables now start with "make_" to make the script `source`ing friendly
+    - made `source`able
+
+commit 0dc10daf766efffd197841751c6f15b7c00fd112
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 16 17:09:02 2014 +0000
+
+    Tor Browser 4.x compatibility fix
+
+commit d8638343007c9a2cd2c07b167a8ad8980763161f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Oct 13 12:36:50 2014 +0000
+
+    readme
+
+commit 832bf6ff7b618db9bbfb1953f0462a5c981b799a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Sep 8 12:23:52 2014 +0000
+
+    environment variable to skip TorButton control port verification https://trac.torproject.org/projects/tor/ticket/13079 export TOR_SKIP_CONTROLPORTTEST=1
+
+commit bbdd1769336f9527ab2f4c8045c0fa6ec14aae30
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 19 18:52:34 2014 +0000
+
+    makefile: added new feature "make deb-chl-bumpup" - Bump upstream version number in debian/changelog.
+
+commit a82d42c42bf668d7b35ac7cc68d47f963c0dc910
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 17 20:54:21 2014 +0000
+
+    Updated debian/changelog.
+
+commit db5131c10f338f2b23dbd8821fbf4c5c3d4b038a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 17 20:47:24 2014 +0000
+
+    Fixed changelog date.
+
+commit 757370138e2fbd54212250c5bd26c1740a86ca96
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 17 18:03:23 2014 +0000
+
+    bump version number
+
+commit d8d8cc31013628186e407e2b229c34b5bbb98300
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 14 13:35:13 2014 +0000
+
+    Implemented make deb-icup: Combination of make deb-pkg, make deb-pkg-install and make deb-pkg-cleanup.
+
+commit ee9838b2afb29471c509fbe16e8df62a616249a3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 27 12:42:24 2014 +0000
+
+    packaging
+
+commit 0b94140905dd0ed095b2ba6feafee0b2f53406d2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 27 04:01:08 2014 +0000
+
+    packaging
+
+commit 62f87ef167eb3cc1ecec15a139fa4aa3b9e8c75d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 26 15:26:34 2014 +0000
+
+    packaging
+
+commit 7c54b281c8d2ea1a9919616011d5999e879a0ff8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 26 15:16:01 2014 +0000
+
+    packaging: removed build dependency on git, since the .git folder won't be included in the upstream tarball.
+
+commit 37e0d2de062601a0d5bfd1da3ad549ac1b9e5ef9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 12 17:10:58 2014 +0000
+
+    packaging
+
+commit 62638fc07a8718474a278e9a07e9a66f378eb8bf
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 12 15:34:14 2014 +0000
+
+    packaging
+
+commit 5c7b0bddd8e70d9ea2501b0446f6ab2ef391e5d4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jul 10 16:55:56 2014 +0000
+
+    Fix, removed "Conflicts: tor". We may not use "Conflicts: tor", otherwise anon-ws-disable-stacked-tor will get removed, when installing a package, that depends on "tor".
+
+commit e98c16ad88a437f83e2099f78420edd98df2e07e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 6 13:22:45 2014 +0000
+
+    use $BASH_SOURCE instead of $0
+
+commit 2673a68d3609e57de5e99b8de29675f584d71d6d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 6 11:59:50 2014 +0000
+
+    sanity test
+
+commit 224f930a029fe79a41efe70eb3abb489338c3afb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 6 11:34:25 2014 +0000
+
+    sanity test
+
+commit 96ed22cd3077cd4a6acf797e5252a81de5bb43bb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 5 08:09:41 2014 +0000
+
+    Bumped debian revision number to avoid lintian warning "new-package-should-close-itp-bug" so we can use lintian --fail-on-warnings as sanity test.
+
+commit ef80a50d914be8657efa3c26a73a8b2724cb6749
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 24 15:45:10 2014 +0000
+
+    added debian epoch; added dotglob
+
+commit b3f0fc416f278b032acc35a56f7e9863da13d8aa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 17:14:42 2014 +0000
+
+    hide unnecessary output in maintainer scripts
+
+commit f4b17c91afb0892443a5372d3ac40985a9158b87
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 14:33:00 2014 +0000
+
+    removed deprecated TB_STANDALONE variable
+
+commit d58a58f9bc701102e26298acb33a47d3c8f0912e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 08:32:59 2014 +0000
+
+    postrm: only attempt to restart init script if daemon is running and if init script is executable
+
+commit c8e79085ee41f4a0a5069437c836e3f666fae410
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 08:31:47 2014 +0000
+
+    postinst: added || true to avoid an error in case the init script has been chmodded -x in meanwhile or in case the original config is erroneous.
+
+commit 3e9eb52bdee06c340972aac335c0e126c4aa2dfa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 08:14:49 2014 +0000
+
+    fix postinst script, only restart rinetd when it is already started to prevent needlessly starting rinetd in chroot to prevent the chroot getting locked
+
+commit 35767595a1d2b24fd77363c87bbe45d615766c18
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 18 13:28:29 2014 +0000
+
+    fix
+
+commit 1ff9587be7c6bbaa5c2e2bf1f5741b877ce8407b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jun 12 12:11:49 2014 +0000
+
+    added lintian override: Dummy script does not need a man page. Original man page still available.
+
+commit 356bd20c145803baecc79cdc24c8fcc99087b6ab
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jun 12 12:03:12 2014 +0000
+
+    added maintainer scripts for restarting rinetd after (un)diverting its config file
+
+commit 9f02b39e07bf50ca2ca870c450dea0e07a603912
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 10 14:14:52 2014 +0000
+
+    update IP as per https://www.whonix.org/forum/index.php/topic,107.0.html
+
+commit c41f192e066f9e51cfccae5d034a622a782c6203
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 3 18:27:23 2014 +0000
+
+    readme
+
+commit c432ec588f68da8bbbac1861a97cd2c8bc5f5e3c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jun 1 15:38:29 2014 +0000
+
+    readme
+
+commit 749d0e7792992bc02a868b7e1b79f34eb27d62bc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu May 29 10:05:27 2014 +0000
+
+    packaging
+
+commit e3bee94a54bdb6a62aaea7c57bad8b5f22dfc2c4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 23 17:55:15 2014 +0000
+
+    packaging
+
+commit b188c078f971faf44bc5ff47cb75126b509ab6ac
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 23 17:46:46 2014 +0000
+
+    .
