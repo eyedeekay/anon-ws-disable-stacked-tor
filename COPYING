@@ -21,6 +21,7 @@ License: GPL-3+
  `/usr/share/common-licenses/GPL-3'.
 
 Files: /etc/default/tor.anondist
+ /etc/init.d/tor.anondist
 Comment: Downloaded from: http://packages.debian.org/jessie/tor
                           http://metadata.ftp-master.debian.org/changelogs//main/t/tor/tor_0.2.3.25-1_copyright
                           http://www.webcitation.org/6Pn35Nro1
