@@ -1,2 +1,6 @@
 # Dummy script does not need a man page. Original man page still available.
 anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
+
+# Just shipping the init script, so other init script that depend on
+# "Provides: tor" do not break.
+anon-ws-disable-stacked-tor: init.d-script-does-not-provide-itself etc/init.d/tor.anondist

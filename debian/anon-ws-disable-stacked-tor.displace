@@ -3,6 +3,7 @@
 ## See the file COPYING for copying conditions.
 
 /etc/default/tor.anondist
+/etc/init.d/tor.anondist
 /etc/rinetd.conf.anondist
 /usr/bin/tor.anondist
 /usr/sbin/tor.anondist
