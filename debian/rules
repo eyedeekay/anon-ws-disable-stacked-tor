@@ -7,10 +7,11 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ --with=config-package
+	dh $@
 
 override_dh_install:
-	dh_installinit --onlyscripts --name tor.anondist
+	dh_configpackage
+	dh_installinit --onlyscripts --name tor
 
 override_dh_installchangelogs:
 	dh_installchangelogs changelog.upstream upstream
