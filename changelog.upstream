@@ -1,3 +1,21 @@
+commit 21a6f2be78497432fdfb207663fd3aa46832ab43
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu May 28 19:55:08 2015 +0000
+
+    systemd compatibility - https://phabricator.whonix.org/T303
+
+commit 12691426c9f0bfd561ce369e90158b9dcd1132ae
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu May 28 16:30:42 2015 +0000
+
+    fixed 'insserv: script tor.anondist-orig: service tor already provided!' warning during upgrades - https://phabricator.whonix.org/T303
+
+commit f5d95f5c707c9f93c04ba57b13c537fdd73429f0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 30 17:55:57 2015 +0000
+
+    bumped changelog version
+
 commit c3618157b27870b7bfe756d817931c5f38ef2076
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Apr 28 16:26:52 2015 +0000
