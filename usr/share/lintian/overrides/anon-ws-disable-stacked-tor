@@ -4,3 +4,6 @@ anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
 # Just shipping the init script, so other init script that depend on
 # "Provides: tor" do not break. Using config-package-dev.
 anon-ws-disable-stacked-tor: package-contains-empty-directory usr/share/anon-ws-disable-stacked-tor/
+
+# Just shipping a systemd drop-in config file.
+anon-ws-disable-stacked-tor: systemd-no-service-for-init-script tor.anondist
