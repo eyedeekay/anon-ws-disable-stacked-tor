@@ -1,0 +1,20 @@
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+[Unit]
+Description=anon-ws-disable-stacked-tor
+Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
+After=network.target
+Wants=rinetd.service
+
+[Service]
+Type=simple
+Restart=always
+TimeoutSec=30
+KillMode=control-group
+SuccessExitStatus=143
+ExecStart=/usr/lib/anon-ws-disable-stacked-tor/socat-unix-sockets
+
+[Install]
+WantedBy=multi-user.target

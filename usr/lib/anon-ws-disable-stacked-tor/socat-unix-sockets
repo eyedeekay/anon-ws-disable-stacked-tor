@@ -1,0 +1,55 @@
+#!/bin/bash
+
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+#set -x
+set -e
+
+## See also comments in /etc/rinetd.conf for an explanation of the source and
+## destination ips / ports.
+## ip_post_list syntax:
+## source_ip:source_port-dest_ip:dest_port
+ip_post_list=(
+   '127.0.0.1:9050-127.0.0.1:9050'
+   '127.0.0.1:9150-127.0.0.1:9150'
+   '127.0.0.1:11109-127.0.0.1:9119'
+   '127.0.0.1:9152-127.0.0.1:9152'
+   '127.0.0.1:9051-127.0.0.1:9052'
+   '127.0.0.1:9151-127.0.0.1:9052'
+   '127.0.0.1:9153-127.0.0.1:9052'
+)
+
+## Could be potentially configurable and extensible.
+#ip_post_list=(
+#   ${ip_post_list[@]}
+#   '127.0.0.1:9154-127.0.0.1:9054'
+#)
+
+## Create a unix domain socket files such as
+## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9050.sock and forward those
+## to 127.0.0.1:9150 etc. from where rinetd accepts it and forwards it to the
+## gateway. See also:
+## https://phabricator.whonix.org/T192
+
+for ip_port_item in ${ip_post_list[@]}; do
+   source_ip_port="${ip_port_item%%-*}"
+   source_ip="${source_ip_port%%:*}"
+   source_port="${source_ip_port##*:}"
+
+   dest_ip_port="${ip_port_item##*-}"
+   dest_ip="${dest_ip_port%%:*}"
+   dest_port="${dest_ip_port##*:}"
+
+   socat -t100 UNIX-LISTEN:"/var/run/anon-ws-disable-stacked-tor/${source_ip}_${source_port}.sock",mode=777,reuseaddr,fork TCP4:"${dest_ip}:${dest_port}" &
+   pid_list="$pid_list $!"
+done
+
+## To test this, you could use:
+## socat - UNIX-CONNECT:/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock
+## GET
+
+## Relying on systemd KillMode=control-group to kill the child processes as
+## well as this script.
+wait $pid_list
