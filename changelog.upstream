@@ -1,3 +1,32 @@
+commit 2756960d4960c3badd5856a01d8429117f02b07f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 20 13:53:09 2015 +0000
+
+    Workaround for 'rinetd fills up the logs until disk is full up if it cannot bind' - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=796235
+
+commit c246d61189015f14e806fbb34bfade5d6cfe6e3c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 20 03:04:39 2015 +0000
+
+    Try to cope up with planned changes by the Tor Browser Bundle (TBB) developers. Try keeping Tor Browser being able to connect while preventing Tor over Tor.
+    The Tor Project (TPO) plans ( https://trac.torproject.org/projects/tor/ticket/14270 ) to modify TBB to use unix domain sockets (Tor SocksSocket option) instead of TCP to talk to Tor.
+    To make things worse, currently the environment variables TOR_SOCKS_HOST and TOR_SOCKS_PORT are broken. ( upstream bug report: https://trac.torproject.org/projects/tor/ticket/8336 )
+    Therefore creating unix domain sockets using socat in folder /var/run/anon-ws-disable-stacked-tor that are forwarded rinetd on localhost which forwards them to the gateway.
+    (Not directly forwarding those to the gateway to make the Qubes implementation simpler. This way no IP replacement is required.)
+    Optimistically setting environment variables to configure TBB in hope that those are later implemented by TPO.
+    export TOR_PRE_EXIST_UNIX_SOCKET_SOCKS="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock"
+    export TOR_PRE_EXIST_UNIX_SOCKET_CONTROL="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9151.sock"
+    As long it is ignored, there is no harm.
+    And once Tor Browser supports it, chances are better that it is still able to make connections See also:
+    - https://trac.torproject.org/projects/tor/ticket/14272#comment:3
+    - https://phabricator.whonix.org/T192
+
+commit 0fe9756e0688335448f32dc161d529721c2e1a39
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 3 14:59:17 2015 +0000
+
+    bumped changelog version
+
 commit c87c71c0146bccf2bdc9f261384cb155341762da
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu May 28 19:57:40 2015 +0000
