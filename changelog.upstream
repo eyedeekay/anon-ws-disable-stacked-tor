@@ -1,3 +1,15 @@
+commit db8df21d02798819ffd6c2b143e8eab246c748a9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 9 00:27:15 2015 +0000
+
+    added missing systemd directions - https://phabricator.whonix.org/T192#6573
+
+commit bc7dee3418b9099dfcbbd027b559e2e4319e3e51
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 25 14:07:46 2015 +0000
+
+    bumped changelog version
+
 commit 32e5955c42faa378feaa85c06b50ad9bde231878
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Aug 24 17:47:14 2015 +0000
