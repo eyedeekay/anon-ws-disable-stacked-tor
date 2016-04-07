@@ -1,3 +1,17 @@
+commit 4616332dbf4f06964449bcb17d305d37c993d638
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Dec 15 01:41:21 2015 +0000
+
+    fix broken anon-ws-disable-stackedtor 'sudo service tor status' in Qubes
+    
+    https://phabricator.whonix.org/T454
+
+commit 4c50bd5eaf25ee790674e1db97087a582a4e9e0a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 22 23:12:33 2015 +0000
+
+    bumped changelog version
+
 commit db8df21d02798819ffd6c2b143e8eab246c748a9
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Sep 9 00:27:15 2015 +0000
