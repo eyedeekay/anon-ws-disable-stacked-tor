@@ -1,3 +1,15 @@
+commit 8ca2d45c9370555cce0f3dde56c843bf2159f2fc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Apr 30 02:26:28 2016 +0000
+
+    socat-unix-sockets: fixed port redirection numbers
+
+commit 28c68e41bc1bb86a00df4b64d323766ef64647cb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 7 22:54:29 2016 +0000
+
+    bumped changelog version
+
 commit 4616332dbf4f06964449bcb17d305d37c993d638
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Dec 15 01:41:21 2015 +0000
