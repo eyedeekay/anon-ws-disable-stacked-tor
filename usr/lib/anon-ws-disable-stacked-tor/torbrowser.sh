@@ -24,7 +24,7 @@ export TOR_SKIP_LAUNCH=1
 ##   127.0.0.1:9050 to Whonix-Gateway 10.152.152.10:9050 and
 ##   127.0.0.1:9150 to Whonix-Gateway 10.152.152.10:9150.
 #export TOR_SOCKS_HOST="10.152.152.10"
-#export TOR_SOCKS_PORT="9100"
+#export TOR_SOCKS_PORT="9150"
 
 #export TOR_TRANSPROXY=1
 
