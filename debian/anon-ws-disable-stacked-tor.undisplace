@@ -4,3 +4,4 @@
 
 ## backwards compatibility with earlier package versions
 /etc/init.d/tor.anondist
+/etc/rinetd.conf.anondist
