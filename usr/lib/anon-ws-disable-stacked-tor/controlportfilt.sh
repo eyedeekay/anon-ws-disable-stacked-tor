@@ -7,7 +7,7 @@
 ## {{{ controlportfilt.d
 
 shopt -s nullglob
-for i in /etc/controlportfilt.d/* /rw/config/controlportfilt.d/*.conf; do
+for i in /etc/controlportfilt.d/*.conf /rw/config/controlportfilt.d/*.conf; do
    if [ -f "$i" ]; then
       ## If the last character is a ~, ignore that file,
       ## because it was created by some editor,
