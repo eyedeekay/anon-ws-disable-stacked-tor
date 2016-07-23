@@ -17,6 +17,15 @@ true "
 "
 
 configure_function() {
+   adduser --quiet \
+           --system \
+           --disabled-password \
+           --home /var/lib/tor \
+           --no-create-home \
+           --shell /bin/false \
+           --group \
+           debian-tor >/dev/null 2>&1 || true
+
    addgroup --quiet debian-tor 2>/dev/null || true
 
    ## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
