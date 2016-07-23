@@ -16,9 +16,19 @@ true "
 #####################################################################
 "
 
+configure_function() {
+   addgroup --quiet debian-tor 2>/dev/null || true
+
+   ## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
+   ## User "user" already exists thanks to the anon-base-files package.
+   addgroup --quiet user debian-tor
+}
+
 case "$1" in
    configure)
       true "INFO: Configuring $DPKG_MAINTSCRIPT_PACKAGE..."
+
+      configure_function
 
       true "INFO: End configuring $DPKG_MAINTSCRIPT_PACKAGE."
 
