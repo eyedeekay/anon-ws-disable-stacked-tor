@@ -19,7 +19,7 @@ export TOR_SKIP_LAUNCH=1
 ##    /home/user/tor-browser_en-US/Data/profile/user.js
 ## could be used.)
 ## Fortunately, this is not required for Whonix by default anymore,
-## because since Whonix 0.6.2, rinetd is configured to redirect
+## because since Whonix 0.6.2, socat is configured to redirect
 ## Whonix-Workstation ports
 ##   127.0.0.1:9050 to Whonix-Gateway 10.152.152.10:9050 and
 ##   127.0.0.1:9150 to Whonix-Gateway 10.152.152.10:9150.
@@ -33,7 +33,7 @@ export TOR_SKIP_LAUNCH=1
 ## to keep it being able to connect.
 ## Since Whonix 12, socat is creating a unix domain socket file
 ## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock which forwards to
-## 127.0.0.1:9150, where rinetd is listening, which forwards it to the gateway
+## 127.0.0.1:9150, where socat is listening, which forwards it to the gateway
 ## port 9150. This environment variable was not implemented in Tor Browser at
 ## time of writing, see:
 ## https://trac.torproject.org/projects/tor/ticket/14272#comment:3

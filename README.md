@@ -22,7 +22,7 @@ as /usr/sbin/tor are replaced with a dummy
 /usr/lib/anon-ws-disable-stacked-tor/dummytor) that does nothing
 (dpkg-diverted using config-package-dev).
 
-rinetd listens on Tor's default ports. system Tor's 127.0.0.1:9050,
+socat listens on Tor's default ports. system Tor's 127.0.0.1:9050,
 127.0.0.1:9051 and TBB's 127.0.0.1:9150, 127.0.0.1:9051, which prevents the
 default Tor Browser Bundle or Tor package by The Tor Project from opening
 these default ports, which will result in Tor failing to open its listening
