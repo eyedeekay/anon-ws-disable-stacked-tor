@@ -6,7 +6,6 @@
 Description=anon-ws-disable-stacked-tor
 Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
 After=network.target
-Wants=rinetd.service
 
 [Service]
 Type=simple
