@@ -34,14 +34,11 @@ export TOR_SKIP_LAUNCH=1
 ## Since Whonix 12, socat is creating a unix domain socket file
 ## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock which forwards to
 ## 127.0.0.1:9150, where socat is listening, which forwards it to the gateway
-## port 9150. This environment variable was not implemented in Tor Browser at
-## time of writing, see:
-## https://trac.torproject.org/projects/tor/ticket/14272#comment:3
-## Optimistically already adding it. As long it is ignored, there is no harm.
-## And once Tor Browser supports it, chances are better that it is still able
-## to make connections.
-export TOR_PRE_EXIST_UNIX_SOCKET_SOCKS="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock"
-export TOR_PRE_EXIST_UNIX_SOCKET_CONTROL="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9151.sock"
+## port 9150.
+## https://phabricator.whonix.org/T192
+## https://trac.torproject.org/projects/tor/ticket/20111#comment:5
+export TOR_SOCKS_SOCKET="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock"
+export TOR_CONTROL_SOCKET="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9151.sock"
 
 ## environment variable to skip TorButton control port verification
 ## https://trac.torproject.org/projects/tor/ticket/13079
