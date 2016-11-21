@@ -1,3 +1,189 @@
+commit 1776ec5499b300b989ff66dfbad506e4184ff455
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 21 17:39:13 2016 +0000
+
+    readme
+
+commit adec67954d6f357370a9ba806d6c6d70fb9e10c0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Nov 17 18:31:44 2016 +0000
+
+    updated Tor IPC environment variable file names as per TBB 6.5a4
+    
+    https://phabricator.whonix.org/T192
+
+commit ce8b7ebb31771ca3c634b7f98e53e99481e29079
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 19:52:21 2016 +0000
+
+    cleanup
+
+commit 28dc66f7a7719d8211acb1f920244bf47967cec2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 19:50:32 2016 +0000
+
+    also add functional /var/run/tor/control_auth_cookie and /var/lib/tor/control_auth_cookie
+
+commit 7f40e2fa34b905c8f062d353815b76d08f1281d7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 19:44:31 2016 +0000
+
+    add support for python-stem Tor Control Socket based authentication
+    
+    by adding a functional /var/run/tor/control.authcookie
+
+commit 223ad3f5a2cf834fcd9ecd10a9954f02b20645c1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 18:45:19 2016 +0000
+
+    also create and forward /var/run/tor/control
+
+commit d476f544eaa516d2bddf39fbfb4956a3424ef1c2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 18:38:32 2016 +0000
+
+    comments
+
+commit 73c3620ef970722bbfa974327e2e9387b72c3db3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 18:35:23 2016 +0000
+
+    fix, make sure /var/run/anon-ws-disable-stacked-tor exists
+
+commit bdca9c8d9e1b195e2e5bb682bef33e4020df3b60
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 18:28:59 2016 +0000
+
+    comments
+
+commit ac551934c1604698dc4630b008a250486240bab5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 18:27:38 2016 +0000
+
+    comments
+
+commit 682650845c3bb948ea2ba40792957fc3ebccd664
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 14 18:26:11 2016 +0000
+
+    create socat unix domain sockets as user debian-tor to solve permission issues
+
+commit eda6e3221fd3c254892ab6a362c91a7f882e0d24
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Sep 13 20:40:01 2016 +0000
+
+    forward /var/run/tor/socks to Whonix-Gateway
+
+commit ad86ce9d4285c5f749697c0d3bf34c37ac39eb2f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Sep 13 20:31:10 2016 +0000
+
+    set environment variables TOR_SOCKS_SOCKET and TOR_CONTROL_SOCKET
+    
+    so Tor Browser connectivity does not break when TPO switches to SocksSocket
+    
+    https://phabricator.whonix.org/T192
+
+commit cd50cafde32b28258a4b2137c545c56905fe8fc5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 31 18:53:12 2016 +0000
+
+    update comments from rinetd to socat
+
+commit 3f2d755e8ed8b4905395d492f3abf9dfc0310c29
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 31 18:34:41 2016 +0000
+
+    also use Wants=network.target
+
+commit a23fb66589be2f93778d45469eae6dc1119d036a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 31 18:33:56 2016 +0000
+
+    remove Wants=rinetd.service, no longer required since ported to socat
+
+commit 4cb8bdd3e1790f407de23a364952e2ed69b70c2d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 23 16:24:25 2016 +0000
+
+    fix
+
+commit e975f8048478c13903c54159caddd5d35c040223
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 23 15:59:01 2016 +0000
+
+    fix permissions
+
+commit 6c9e7a1afee8dc9dbf45ea370377f4d490539d15
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 23 15:43:29 2016 +0000
+
+    forward Tor auth cookie unix domain socket files to Whonix-Gateway Control Port Filter
+    
+    cleanup eventual old files
+    
+    comments
+
+commit 63a0d3ccd15646cf11d7c37a2a7fbde7e4b0bb61
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jun 16 13:23:21 2016 +0000
+
+    remove rinetd maintainer script restart code since ported to socat
+    
+    https://phabricator.whonix.org/T330
+
+commit 28e0d4ce831732bf042e7ba73cf650e3462ae81b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 15 21:50:24 2016 +0000
+
+    code simplification
+
+commit f07ca37aea1d002f8a73bbe15fbd5915447ba911
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 15 21:46:56 2016 +0000
+
+    fix, /etc/controlportfilt.d/* -> /etc/controlportfilt.d/*.conf
+
+commit 6093a880105191722b0c0707078b70bb486fadf3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 15 21:46:30 2016 +0000
+
+    nullglob
+
+commit 5cf007edfcf42e1b971e69354162f801d9573ef4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 15 21:40:04 2016 +0000
+
+    parse also /rw/config/controlportfilt.d/*.conf for config snippets
+
+commit 57673fa1923536319853dcc93a148703dbb3eabc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 8 22:33:39 2016 +0000
+
+    removed rinetd leftovers
+    
+    https://phabricator.whonix.org/T464
+
+commit 2ead73c2d15ba39836ec14f122a14f5047bb768a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 8 22:21:57 2016 +0000
+
+    replaced rinetd with socat and added configurable socks port redirection
+    
+    https://phabricator.whonix.org/T464
+
+commit 480c18d32f9ec39485c80218401398c1abd510d7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 1 16:36:15 2016 +0000
+
+    comment
+
+commit e06829659ae48e466edffbf6d50ada482921319f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed May 4 22:03:43 2016 +0000
+
+    bumped changelog version
+
 commit 8ca2d45c9370555cce0f3dde56c843bf2159f2fc
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat Apr 30 02:26:28 2016 +0000
