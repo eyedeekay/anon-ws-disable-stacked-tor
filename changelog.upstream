@@ -1,3 +1,15 @@
+commit 215566d746094baaeb914fb0f5713f2e5b56896b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 21 22:24:17 2016 +0000
+
+    remove no longer needed lintian override
+
+commit 3b8b93b3c52ae9e7beef1b27b78ff4fe3b36905e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 21 22:20:08 2016 +0000
+
+    bumped changelog version
+
 commit 1776ec5499b300b989ff66dfbad506e4184ff455
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Nov 21 17:39:13 2016 +0000
