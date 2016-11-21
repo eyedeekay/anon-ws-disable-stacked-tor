@@ -5,6 +5,7 @@
 [Unit]
 Description=anon-ws-disable-stacked-tor
 Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
+ConditionPathExists=!/var/run/qubes/this-is-templatevm
 
 After=network.target
 Wants=network.target
