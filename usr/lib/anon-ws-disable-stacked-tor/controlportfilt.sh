@@ -1,26 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 
 ## This file is part of Whonix.
 ## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
-## {{{ controlportfilt.d
+## This file gets `source`ed by /etc/X11/Xsession.d by `sh`, not `bash`.
 
-shopt -s nullglob
 for i in /etc/controlportfilt.d/*.conf /rw/config/controlportfilt.d/*.conf; do
-   bash_n_exit_code="0"
-   bash_n_output="$(bash -n "$i" 2>&1)" || { bash_n_exit_code="$?" ; true; };
-   if [ ! "$bash_n_exit_code" = "0" ]; then
-      echo "Invalid config file: $i
-bash_n_exit_code: $bash_n_exit_code
-bash_n_output:
-$bash_n_output" >&2
-      exit 1
+   if [ -f "$i" ]; then
+      . "$i"
    fi
-   source "$i"
 done
-
-## }}}
 
 if [ ! "$CONTROL_PORT_FILTER_PROXY" = "0" ]; then
 
