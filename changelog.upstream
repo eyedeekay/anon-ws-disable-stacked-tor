@@ -1,3 +1,23 @@
+commit 6dee6c21b2ab13efbd7fa8b1a1eb4601c73aca2e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 22 02:30:31 2016 +0000
+
+    fix controlportfilt.sh
+    
+    https://github.com/QubesOS/qubes-issues/issues/2447
+
+commit 59ce8d081c9710ee5c707eddc2c0c3e8bacfefce
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 21 23:33:09 2016 +0000
+
+    do not run anon-ws-disable-stacked-tor service in Qubes TemplateVM
+
+commit cc24c7df062d6131e888c7e6ffa489ebba399d1b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 21 22:24:46 2016 +0000
+
+    bumped changelog version
+
 commit 215566d746094baaeb914fb0f5713f2e5b56896b
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Nov 21 22:24:17 2016 +0000
