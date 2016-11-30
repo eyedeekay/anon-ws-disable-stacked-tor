@@ -1,3 +1,25 @@
+commit 678d81fd2d1a87517c54874792b6d18935507878
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 28 00:40:32 2016 +0100
+
+    socat TCP4 and TCP6 forward to Whonix-Gateway (not just TCP4)
+    
+    https://phabricator.whonix.org/T192
+
+commit 24421e2dadbcec6911ecb41bc8f7fce5b23a018f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 28 00:35:09 2016 +0100
+
+    socat listen on localhost only
+    
+    https://forums.whonix.org/t/tor-browser-6-5a4-connectivity-broken-blocked-by-apparmor-profile-since-tbb-changed-to-sockssocket/3154/16?u=patrick
+
+commit b6a065430c111a16ccddeda8e67c24ab5f977a54
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 22 02:32:29 2016 +0000
+
+    bumped changelog version
+
 commit 6dee6c21b2ab13efbd7fa8b1a1eb4601c73aca2e
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Nov 22 02:30:31 2016 +0000
