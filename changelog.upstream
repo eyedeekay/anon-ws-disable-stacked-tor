@@ -1,3 +1,17 @@
+commit 5c8e5b736bf1d803ec79e62037590e2b452bd1f6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Dec 7 19:51:03 2016 +0100
+
+    port 9052 -> 9051
+    
+    https://phabricator.whonix.org/T573
+
+commit 078dde61325251c4fd045bf0f2024a3e240b0879
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 30 11:49:41 2016 +0000
+
+    bumped changelog version
+
 commit 678d81fd2d1a87517c54874792b6d18935507878
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Nov 28 00:40:32 2016 +0100
