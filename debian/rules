@@ -11,7 +11,6 @@
 
 override_dh_install:
 	dh_configpackage
-	dh_installinit --onlyscripts --name tor.anondist
 
 override_dh_installchangelogs:
 	dh_installchangelogs changelog.upstream upstream
