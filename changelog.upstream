@@ -1,3 +1,39 @@
+commit bcbc8d5ea3258f2cd1ebdd140729e955036a0391
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 15 08:05:45 2017 +0000
+
+    remove init.d leftovers
+
+commit 0961709d6348e1159b2750ad0c54db0b4bf530a5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 15 08:00:55 2017 +0000
+
+    remove no longer required lintian override
+
+commit 178b89d67178b2c9c40842f421dd766221cd58a1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 15 07:59:29 2017 +0000
+
+    remove etc/init.d/tor.anondist
+
+commit ed5b25516bd34e2fd5346152aa9eb67c65b2805c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 15 07:58:40 2017 +0000
+
+    remove etc/init.d/tor.anondist since Tor no longer ships an init script
+
+commit 38d63e18ced0c09754964787483a775f7c4cff84
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 15 08:35:26 2017 +0100
+
+    packaging, bumped Standards-Version from 3.9.6 to 3.9.8 for jessie support
+
+commit 67ce5b0da2677b5c56b9c4c66d2ae782657a1b63
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Dec 10 00:12:12 2016 +0000
+
+    bumped changelog version
+
 commit 5c8e5b736bf1d803ec79e62037590e2b452bd1f6
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Dec 7 19:51:03 2016 +0100
