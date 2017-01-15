@@ -1,5 +1,2 @@
 # Dummy script does not need a man page. Original man page still available.
 anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
-
-# Just shipping a systemd drop-in config file.
-anon-ws-disable-stacked-tor: systemd-no-service-for-init-script tor.anondist
