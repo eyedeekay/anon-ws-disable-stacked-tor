@@ -18,8 +18,7 @@ config-package-dev), so even if the tor package gets installed, it won't be
 automatically started.
 
 Binaries eventually installed (by the tor Debian package) /usr/bin/tor as well
-as /usr/sbin/tor are replaced with a dummy
-/usr/lib/anon-ws-disable-stacked-tor/dummytor) that does nothing
+as /usr/sbin/tor are replaced with a dummy wrapper that does nothing
 (dpkg-diverted using config-package-dev).
 
 socat listens on Tor's default ports. system Tor's 127.0.0.1:9050,
