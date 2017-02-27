@@ -1,3 +1,25 @@
+commit 5e6454939f95e3ac6436edaa05d324df70629f0b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 24 00:02:00 2017 +0000
+
+    fix
+
+commit 6f23ec3b6fd6494ee28875395749c6719ada8eb3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 23 23:53:31 2017 +0000
+
+    improve Tor emulation
+    
+    keep dummy Tor instance running
+    
+    this allows using tor-prompt (from python-stem package) inside Whonix-Workstation
+
+commit 2a3e968206ecd6ef6341d92cffbb1a195d8960a7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 17 13:45:40 2017 +0000
+
+    bumped changelog version
+
 commit f14694c0e95742fda7cc6c2ae2dbd815eed9c09b
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Feb 14 17:30:29 2017 +0000
