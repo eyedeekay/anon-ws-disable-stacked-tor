@@ -13,7 +13,6 @@ ListenStream=127.0.0.1:9050
 SocketUser=debian-tor
 SocketMode=666
 DirectoryMode=2755
-BindToDevice=127.0.0.1
 
 [Install]
 WantedBy=sockets.target
