@@ -10,6 +10,8 @@ ConditionPathExists=!/var/run/qubes/this-is-templatevm
 
 [Socket]
 ListenStream=127.0.0.1:9153
+SocketUser=debian-tor
+SocketMode=666
 
 [Install]
 WantedBy=sockets.target

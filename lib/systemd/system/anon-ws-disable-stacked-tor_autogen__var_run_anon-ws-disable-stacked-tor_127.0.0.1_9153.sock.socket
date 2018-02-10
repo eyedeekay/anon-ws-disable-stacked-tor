@@ -10,6 +10,8 @@ ConditionPathExists=!/var/run/qubes/this-is-templatevm
 
 [Socket]
 ListenStream=/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9153.sock
+SocketUser=debian-tor
+SocketMode=666
 
 [Install]
 WantedBy=sockets.target
