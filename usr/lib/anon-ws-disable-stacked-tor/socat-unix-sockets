@@ -22,12 +22,14 @@ $bash_n_output" >&2
    source "$i"
 done
 
-pid_list="$(pgrep -P "$$")"
+## '|| true' in case no child process is run.
+pid_list="$(pgrep -P "$$")" || true
 
 if [ "$pid_list" = "" ]; then
-   wait "$$"
-else
-   ## Relying on systemd KillMode=control-group to kill the child processes as
-   ## well as this script.
-   wait $pid_list
+   echo "INFO: No processes launched into background, ok."
+   exit 125
 fi
+
+## Relying on systemd KillMode=control-group to kill the child processes as
+## well as this script.
+wait $pid_list
