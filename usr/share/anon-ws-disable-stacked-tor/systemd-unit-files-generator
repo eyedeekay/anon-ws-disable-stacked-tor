@@ -74,7 +74,7 @@ for item in $file_port_tuples ; do
 [Unit]
 Description=redirect $listen_where to Whonix-Gateway port ${single_port}
 Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
-ConditionPathExists=/var/run/qubes/this-is-templatevm
+ConditionPathExists=!/var/run/qubes/this-is-templatevm
 
 [Socket]
 ListenStream=$listen_where
@@ -91,7 +91,7 @@ WantedBy=sockets.target" > "./lib/systemd/system/anon-ws-disable-stacked-tor_aut
 [Unit]
 Description=redirect $listen_where to Whonix-Gateway port ${single_port}
 Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
-ConditionPathExists=/var/run/qubes/this-is-templatevm
+ConditionPathExists=!/var/run/qubes/this-is-templatevm
 After=anon-ws-disable-stacked-tor_autogen_${file_name}.socket
 Requires=anon-ws-disable-stacked-tor_autogen_${file_name}.socket
 
