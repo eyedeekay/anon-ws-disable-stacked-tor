@@ -13,7 +13,7 @@ ListenStream=/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9152.sock
 SocketUser=debian-tor
 SocketMode=666
 DirectoryMode=2755
-#BindToDevice=
+BindToDevice=127.0.0.1
 
 [Install]
 WantedBy=sockets.target
