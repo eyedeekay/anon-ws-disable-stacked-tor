@@ -15,6 +15,7 @@ Restart=always
 TimeoutSec=30
 KillMode=control-group
 SuccessExitStatus=143
+ExecStartPre=/usr/lib/anon-ws-disable-stacked-tor/state-files
 ExecStart=/usr/lib/anon-ws-disable-stacked-tor/socat-unix-sockets
 
 [Install]
