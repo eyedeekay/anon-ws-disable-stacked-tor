@@ -1,2 +1,6 @@
-# Dummy script does not need a man page. Original man page still available.
+## Copyright (C) 2017 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+## Dummy script does not need a man page. Original man page still available.
 anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
+
