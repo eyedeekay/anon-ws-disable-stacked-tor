@@ -15,7 +15,9 @@ Restart=always
 TimeoutSec=30
 KillMode=control-group
 SuccessExitStatus=143
+PermissionsStartOnly=true
 ExecStartPre=/usr/lib/anon-ws-disable-stacked-tor/state-files
+User=debian-tor
 ExecStart=/usr/lib/anon-ws-disable-stacked-tor/socat-unix-sockets
 
 [Install]
