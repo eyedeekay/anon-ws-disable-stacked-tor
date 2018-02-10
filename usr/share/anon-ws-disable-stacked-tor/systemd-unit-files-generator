@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
@@ -16,11 +18,12 @@ echo "\
 
 ## Dummy script does not need a man page. Original man page still available.
 anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
-" > usr/share/lintian/overrides/anon-ws-disable-stacked-tor
+
+## false positive lintian warning for static systemd unit file
+## http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2017-March/014380.html
+## https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=832771#32" > usr/share/lintian/overrides/anon-ws-disable-stacked-tor
 
 rm -f lib/systemd/system/anon-ws-disable-stacked-tor_autogen_*
-
-exit
 
 port_list+=" 9050 " ## system Tor default SocksPort
 port_list+=" 9150 " ## Tor Browser Bundle default SocksPort
@@ -61,15 +64,7 @@ ExecStart=/lib/systemd/systemd-socket-proxyd 10.152.152.10:9050
 PrivateTmp=yes" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${single_port}.service"
 
 echo "\
-## Copyright (C) 2017 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
-## See the file COPYING for copying conditions.
-
-## false positive lintian warning for static systemd unit file
-## http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2017-March/014380.html
-## https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=832771#32
-qubes-whonix: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor-_autogen_${single_port}.service
-" > ./usr/share/lintian/overrides/anon-ws-disable-stacked-tor
-
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${single_port}.service" >> ./usr/share/lintian/overrides/anon-ws-disable-stacked-tor
 
 done
 

@@ -4,3 +4,12 @@
 ## Dummy script does not need a man page. Original man page still available.
 anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
 
+## false positive lintian warning for static systemd unit file
+## http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2017-March/014380.html
+## https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=832771#32
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_9050.service
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_9150.service
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_9152.service
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_9051.service
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_9151.service
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_9153.service
