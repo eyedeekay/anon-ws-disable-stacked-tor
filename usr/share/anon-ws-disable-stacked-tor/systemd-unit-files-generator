@@ -25,48 +25,12 @@ anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
 
 rm -f lib/systemd/system/anon-ws-disable-stacked-tor_autogen_*
 
-port_list+=" 9050 " ## system Tor default SocksPort
-port_list+=" 9150 " ## Tor Browser Bundle default SocksPort
-port_list+=" 9152 " ## Tor Messenger default SocksPort
-port_list+=" 9051 " ## Tor default ControlPort
-port_list+=" 9151 " ## Tor Browser Bundle default ControlPort
-port_list+=" 9153 " ## Tor Messenger default ControlPort
-
-for single_port in $port_list ; do
-   echo "\
-## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
-## See the file COPYING for copying conditions.
-
-[Unit]
-Description=redirect 127.0.0.1:$single_port to Whonix-Gateway
-Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
-ConditionPathExists=/var/run/qubes/this-is-templatevm
-
-[Socket]
-ListenStream=127.0.0.1:$single_port
-
-[Install]
-WantedBy=sockets.target" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${single_port}.socket"
-
-echo "\
-## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
-## See the file COPYING for copying conditions.
-
-[Unit]
-Description=redirect 127.0.0.1:${single_port} to Whonix-Gateway
-Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
-ConditionPathExists=/var/run/qubes/this-is-templatevm
-After=anon-ws-disable-stacked-tor_autogen_${single_port}.socket
-Requires=anon-ws-disable-stacked-tor_autogen_${single_port}.socket
-
-[Service]
-ExecStart=/lib/systemd/systemd-socket-proxyd 10.152.152.10:${single_port}
-PrivateTmp=yes" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${single_port}.service"
-
-echo "\
-anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${single_port}.service" >> ./usr/share/lintian/overrides/anon-ws-disable-stacked-tor
-
-done
+file_port_tuples+=" port#9050 " ## system Tor default SocksPort
+file_port_tuples+=" port#9150 " ## Tor Browser Bundle default SocksPort
+file_port_tuples+=" port#9152 " ## Tor Messenger default SocksPort
+file_port_tuples+=" port#9051 " ## Tor default ControlPort
+file_port_tuples+=" port#9151 " ## Tor Browser Bundle default ControlPort
+file_port_tuples+=" port#9153 " ## Tor Messenger default ControlPort
 
 ## Create a unix domain socket files such as
 ## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9050.sock and forward those
@@ -87,9 +51,50 @@ file_port_tuples+=" /var/run/tor/control#9051 "
 
 for item in $file_port_tuples ; do
    file_item="${item%#*}"
-   port="${item##*#}"
+   single_port="${item##*#}"
 
-   echo socat -t100 UNIX-LISTEN:"$file_item",mode=777,reuseaddr,fork TCP:$GATEWAY_IP:"$port" &
+   if [ "$file_item" = "port" ]; then
+      listen_where="127.0.0.1:$single_port"
+      file_name="port_${single_port}"
+   else
+      listen_where="$file_item"
+      file_basename="${file_item##*/}"
+      file_name=${file_item//\//\_}
+   fi
+
+   echo "\
+## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+[Unit]
+Description=redirect $listen_where to Whonix-Gateway port ${single_port}
+Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
+ConditionPathExists=/var/run/qubes/this-is-templatevm
+
+[Socket]
+ListenStream=$listen_where
+
+[Install]
+WantedBy=sockets.target" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.socket"
+
+echo "\
+## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+[Unit]
+Description=redirect $listen_where to Whonix-Gateway port ${single_port}
+Documentation=https://www.whonix.org/wiki/Dev/anon-ws-disable-stacked-tor
+ConditionPathExists=/var/run/qubes/this-is-templatevm
+After=anon-ws-disable-stacked-tor_autogen_${file_name}.socket
+Requires=anon-ws-disable-stacked-tor_autogen_${file_name}.socket
+
+[Service]
+ExecStart=/lib/systemd/systemd-socket-proxyd 10.152.152.10:${single_port}
+PrivateTmp=yes" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.service"
+
+echo "\
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.service" >> ./usr/share/lintian/overrides/anon-ws-disable-stacked-tor
+
 done
 
 ## To test this, you could use:
