@@ -45,8 +45,8 @@ file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9050.sock#905
 file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock#9150 "
 file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9152.sock#9152 "
 file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9051.sock#9051 "
-file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9151.sock#9151 "
-file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9153.sock#9153 "
+file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9151.sock#9051 "
+file_port_tuples+=" /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9153.sock#9051 "
 
 ## system Tor default SocksSocket
 file_port_tuples+=" /var/run/tor/socks#9050 "
@@ -82,6 +82,8 @@ ConditionPathExists=!/var/run/qubes/this-is-templatevm
 ListenStream=$listen_where
 SocketUser=debian-tor
 SocketMode=666
+DirectoryMode=2755
+#BindToDevice=
 
 [Install]
 WantedBy=sockets.target" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.socket"
@@ -107,10 +109,3 @@ PrivateTmp=yes" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${fi
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.service" >> ./usr/share/lintian/overrides/anon-ws-disable-stacked-tor
 
 done
-
-## To test this, you could use:
-## sudo --non-interactive -u debian-tor socat - UNIX-CONNECT:/var/run/tor/socks
-## Then type:
-## GET
-## <enter>
-## The expected reply includes 'Tor is not an HTTP Proxy'.
