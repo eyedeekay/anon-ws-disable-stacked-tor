@@ -12,6 +12,8 @@ ConditionPathExists=!/var/run/qubes/this-is-templatevm
 ListenStream=/var/run/tor/socks
 SocketUser=debian-tor
 SocketMode=666
+DirectoryMode=2755
+#BindToDevice=
 
 [Install]
 WantedBy=sockets.target
