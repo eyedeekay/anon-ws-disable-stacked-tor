@@ -1,3 +1,179 @@
+commit 64c1563645353524a1226151e8085d213ba62e3e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Feb 11 00:26:40 2018 +0000
+
+    comment
+
+commit 28ddee705b3164c48210f734a19a3b26e676e111
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Feb 11 00:20:33 2018 +0000
+
+    regenerate
+
+commit 6548c8a329ea10341580760cfc55b510c93f4b8f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Feb 11 00:19:26 2018 +0000
+
+    readd TorChat support
+
+commit aa9c512898e80340c39e37afc950fcadcad3d47c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 23:59:06 2018 +0000
+
+    fix, remove BindToDevice=127.0.0.1, not working, not required
+
+commit c96c4cf0c96044e168e6f8922c046e9575703381
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 23:54:19 2018 +0000
+
+    fix
+
+commit f71ff14ecf5d238462a5f70066fa091f8796806b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 23:29:47 2018 +0000
+
+    BindToDevice=127.0.0.1
+
+commit 9ddcde068b23b919fae5ae375c6a0aab552221c5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 23:23:32 2018 +0000
+
+    fix
+
+commit 3996f208f88138587c0a889b7967f918e6b14161
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 23:09:56 2018 +0000
+
+    reintroduce etc/anon-ws-disable-stacked-tor.d/30_anon-dist.conf
+    
+    otherwise we would have to delete it
+    
+    this mechanism may be easier to use than creating more systemd unit files
+
+commit d9654219d146db56155989cc9178c185ffa3da29
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 23:09:40 2018 +0000
+
+    fix
+
+commit b4858569817bb58ce496bfb6c42f8ce9d5f81c00
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 20:22:56 2018 +0000
+
+    regenerate
+
+commit b9e6bbdb1719a767d65e673eb5ae7bfaeab4b4da
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 20:22:19 2018 +0000
+
+    fix unit domain socket file listener and access rights
+
+commit f85a4da96f9b7562693dffe444556dbe9e7e3409
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 19:00:31 2018 +0000
+
+    anon-ws-disable-stacked-tor to systemd socket activation
+    
+    initially generate systemd service and socket files
+    
+    by using usr/share/anon-ws-disable-stacked-tor/systemd-unit-files-generator
+    
+    https://phabricator.whonix.org/T623
+
+commit 1e28ee0263bb7499c3251b8ec926c14091e492fa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 18:58:10 2018 +0000
+
+    port anon-ws-disable-stacked-tor to systemd socket activation work in progress
+    
+    https://phabricator.whonix.org/T623
+
+commit 49ea58c2ca9e6e5667771c7a4b8a0d8789e58d1f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 18:48:43 2018 +0000
+
+    port anon-ws-disable-stacked-tor to systemd socket activation work in progress
+    
+    https://phabricator.whonix.org/T623
+
+commit 453cd22e26dc1ddedeeeb1bda23a76952f2bb651
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 18:40:09 2018 +0000
+
+    port anon-ws-disable-stacked-tor to systemd socket activation work in progress
+    
+    https://phabricator.whonix.org/T623
+
+commit 9159e2fc94b575889a71ab4fcf7a69a2d4dcdeb5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 18:11:01 2018 +0000
+
+    port anon-ws-disable-stacked-tor to systemd socket activation work in progress
+    
+    https://phabricator.whonix.org/T623
+
+commit 39dda65e8cdfd813e7aa43fb9fa30c43d7d4714f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 18:06:14 2018 +0000
+
+    port anon-ws-disable-stacked-tor to systemd socket activation work in progress
+    
+    https://phabricator.whonix.org/T623
+
+commit 0d53472ca947dc59531418a8948e7470939214ab
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 17:58:23 2018 +0000
+
+    port anon-ws-disable-stacked-tor to systemd socket activation work in progress
+    
+    https://phabricator.whonix.org/T623
+
+commit 3c402798214756099c9f3cc61f87f5df1c314b63
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 17:03:07 2018 +0000
+
+    refactoring
+
+commit a402259d9f879cb09a06d51350f6fc1233a5a750
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 16:57:01 2018 +0000
+
+    break TorChat for simplicity
+    
+    perhaps reimplement later
+
+commit d859abe8fb04d420a218ff916a5107fcf92305d3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 16:55:28 2018 +0000
+
+    refactoring
+
+commit 736947d13795304f0a7596d18bfeee08f7f4cc93
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 16:41:50 2018 +0000
+
+    refactoring
+
+commit 365630e8b1e0fa2d081a467691ff8f20f2c2d7ff
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 16:32:48 2018 +0000
+
+    refactoring
+
+commit e6776e7f1ce10457f9a355655c9c3063e5c19529
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 10 16:26:28 2018 +0000
+
+    break TorChat for simplicity
+    
+    perhaps reimplement later
+
+commit 4495ab8ebf53925adc14cce9b3dfee52b79b2488
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 1 14:50:04 2018 +0000
+
+    bumped changelog version
+
 commit 370e8b1049cbdd2f2dabcee342db020c2fdc03f1
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Jan 29 15:50:12 2018 +0000
