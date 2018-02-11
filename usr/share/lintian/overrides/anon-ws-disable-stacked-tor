@@ -15,6 +15,7 @@ anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/system
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_port_9051.service
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_port_9151.service
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_port_9153.service
+anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_port_11109.service
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen__var_run_anon-ws-disable-stacked-tor_127.0.0.1_9050.sock.service
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen__var_run_anon-ws-disable-stacked-tor_127.0.0.1_9150.sock.service
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen__var_run_anon-ws-disable-stacked-tor_127.0.0.1_9152.sock.service
