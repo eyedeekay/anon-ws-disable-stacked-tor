@@ -36,6 +36,7 @@ file_port_tuples+=" port#9152:9152 " ## Tor Messenger default SocksPort
 file_port_tuples+=" port#9051:9051 " ## Tor default ControlPort
 file_port_tuples+=" port#9151:9051 " ## Tor Browser Bundle default ControlPort
 file_port_tuples+=" port#9153:9051 " ## Tor Messenger default ControlPort
+file_port_tuples+=" port#11109:9119 " ## TorChat default SocksPort
 
 ## Create a unix domain socket files such as
 ## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9050.sock and forward those
