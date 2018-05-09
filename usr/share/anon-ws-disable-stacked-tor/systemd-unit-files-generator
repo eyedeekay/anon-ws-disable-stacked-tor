@@ -15,6 +15,7 @@ cd ..
 
 mkdir -p usr/share/lintian/overrides
 
+## Create lintian override file header.
 echo "\
 ## Copyright (C) 2017 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
@@ -28,6 +29,7 @@ anon-ws-disable-stacked-tor: binary-without-manpage usr/sbin/tor.anondist
 ## http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2017-March/014380.html
 ## https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=832771#32" > usr/share/lintian/overrides/anon-ws-disable-stacked-tor
 
+## Delete previously automatically generated systemd unit files by this script.
 rm -f lib/systemd/system/anon-ws-disable-stacked-tor_autogen_*
 
 file_port_tuples+=" port#9050:9050 " ## system Tor default SocksPort
@@ -111,6 +113,7 @@ Requires=anon-ws-disable-stacked-tor_autogen_${file_name}.socket
 ExecStart=/lib/systemd/systemd-socket-proxyd $destination_where
 PrivateTmp=yes" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.service"
 
+   ## Append lintian override for each auto generated systemd unit file.
    echo "\
 anon-ws-disable-stacked-tor: systemd-service-file-missing-install-key lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.service" >> ./usr/share/lintian/overrides/anon-ws-disable-stacked-tor
 
