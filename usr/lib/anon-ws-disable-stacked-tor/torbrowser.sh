@@ -18,7 +18,7 @@ export TOR_SKIP_LAUNCH=1
 ##    /home/user/tor-browser/Browser/TorBrowser/Data/Browser/profile.default/user.js
 ## could be used.)
 ## Fortunately, this is not required for Whonix by default anymore,
-## because since Whonix 13, socat is configured to redirect
+## because systemd-socket-proxyd is configured to redirect
 ## Whonix-Workstation ports
 ##   127.0.0.1:9050 to Whonix-Gateway 10.152.152.10:9050
 ##   127.0.0.1:9051 to Whonix-Gateway 10.152.152.10:9051
@@ -39,10 +39,9 @@ export TOR_SKIP_LAUNCH=1
 ## Environment variable to configure Tor Browser to use a pre existing unix
 ## domain socket file instead of creating its own one to avoid Tor over Tor and
 ## to keep it being able to connect.
-## Since Whonix 13, socat is creating a unix domain socket file
-## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock which forwards to
-## 127.0.0.1:9150, where socat is listening, which forwards it to the gateway
-## port 9150.
+## systemd-socket-proxyd is being used for creation of unix domain socket file
+## /var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock and forwarding it to
+## to Whonix-Gateway port 9150.
 ## https://phabricator.whonix.org/T192
 ## https://trac.torproject.org/projects/tor/ticket/20111#comment:5
 export TOR_SOCKS_IPC_PATH="/var/run/anon-ws-disable-stacked-tor/127.0.0.1_9150.sock"
@@ -54,7 +53,7 @@ export TOR_SKIP_CONTROLPORTTEST=1
 
 ## Environment variable to disable the "TorButton" ->
 ## "Open Network Settings..." menu item. It is not useful and confusing to have
-## on a workstation, because Tor must be configured on the gateway, which is
-## for security reasons forbidden from the gateway.
+## on a workstation, because Tor must be configured on the Whonix-Gateway, which is
+## for security reasons forbidden from the Whonix-Gateway.
 ## https://trac.torproject.org/projects/tor/ticket/14100
 export TOR_NO_DISPLAY_NETWORK_SETTINGS=1
