@@ -27,6 +27,10 @@ $bash_n_output" >&2
    source "$i"
 done
 
+if [ "$BASH_SOURCE" = "/usr/lib/anon-ws-disable-stacked-tor/systemd-unit-files-generator" ]; then
+   [ -n "$system_run" ] || system_run="true"
+fi
+
 mkdir -p usr/share/lintian/overrides
 
 ## Create lintian override file header.
@@ -101,6 +105,12 @@ Requires=anon-ws-disable-stacked-tor_autogen_${file_name}.socket
 [Service]
 ExecStart=/lib/systemd/systemd-socket-proxyd $destination_where
 PrivateTmp=yes" > "./lib/systemd/system/anon-ws-disable-stacked-tor_autogen_${file_name}.service"
+
+   if [ "$system_run" = "true" ]; then
+      systemctl --system daemon-reload
+      systemctl enable "anon-ws-disable-stacked-tor_autogen_${file_name}.socket"
+      systemctl start "anon-ws-disable-stacked-tor_autogen_${file_name}.socket"
+   fi
 
    ## Append lintian override for each auto generated systemd unit file.
    echo "\
